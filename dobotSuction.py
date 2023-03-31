@@ -51,35 +51,38 @@ inv1 = suf.invkinec(crd.item(0), crd.item(1), crd.item(2))
 crd = suf.globaltoFrame(0, -1.25, 0.035)
 inv2 = suf.invkinec(crd.item(0), crd.item(1), crd.item(2))
 
+crd = suf.globaltoFrame(0, -1.25, 0.035)
+inv2 = suf.invkinec(crd.item(0), crd.item(1), crd.item(2))
 
 
-sec1 = 60
-sec2 = 40
-sec3 = 500
+sec = 60
+sec1 = 40
+sec2 = 500
+# sec3 = 
 
 
 
 j1 = []
 theta = 0
 rad = np.radians(theta)
-j1_move = inv.item(0)/ sec1 
-for i in range(0,sec1, 1):
+j1_move = inv.item(0)/ sec 
+for i in range(0,sec, 1):
     j1.append(rad)
     theta = theta + j1_move
     rad = np.radians(theta)
 
 theta = 0
 rad = np.radians(theta)
-j1_move = inv1.item(0)/ sec2 
-for i in range(0, sec2, 1):
+j1_move = inv1.item(0)/ sec1 
+for i in range(0, sec1, 1):
     j1.append(rad)
     theta = theta + j1_move
     rad = np.radians(theta )
 
 theta = 0
 rad = np.radians(theta)
-j1_move = inv2.item(0)/ sec3
-for i in range(0, sec3, 1):
+j1_move = inv2.item(0)/ sec2
+for i in range(0, sec2, 1):
     j1.append(rad)
     theta = theta + j1_move
     rad = np.radians(theta )
@@ -89,22 +92,22 @@ for i in range(0, sec3, 1):
 j2 = []
 theta = 0
 rad = np.radians(theta)
-j2_move = inv.item(1)/ sec1 
-for i in range(0,sec1, 1):
+j2_move = inv.item(1)/ sec 
+for i in range(0,sec, 1):
     j2.append(rad)
     theta = theta + j2_move
     rad = np.radians(theta)
 theta = 0
 rad = np.radians(theta)
-j2_move = inv1.item(1)/ sec2 
+j2_move = inv1.item(1)/ sec1 
+for i in range(0, sec1, 1):
+    j2.append(rad)
+    theta = theta + j2_move
+    rad = np.radians(theta)
+theta = 0
+rad = np.radians(theta)
+j2_move = inv2.item(1)/ sec2
 for i in range(0, sec2, 1):
-    j2.append(rad)
-    theta = theta + j2_move
-    rad = np.radians(theta)
-theta = 0
-rad = np.radians(theta)
-j2_move = inv2.item(1)/ sec3
-for i in range(0, sec3, 1):
     j2.append(rad)
     theta = theta + j2_move
     rad = np.radians(theta)
@@ -114,24 +117,24 @@ rad = 0.0
 j3 = []
 theta = 0
 rad = np.radians(theta)
-j3_move = inv.item(2)/ sec1
-for i in range(0,sec1, 1):
+j3_move = inv.item(2)/ sec
+for i in range(0,sec, 1):
     j3.append(rad)
     theta = theta + j3_move
     rad = np.radians(theta)
 
 theta = 0
 rad = np.radians(theta)
-j3_move = inv1.item(2)/ sec2
+j3_move = inv1.item(2)/ sec1
+for i in range(0, sec1, 1):
+    j3.append(rad)
+    theta = theta + j3_move
+    rad = np.radians(theta)
+
+theta = 0
+rad = np.radians(theta)
+j3_move = inv2.item(2)/ sec2
 for i in range(0, sec2, 1):
-    j3.append(rad)
-    theta = theta + j3_move
-    rad = np.radians(theta)
-
-theta = 0
-rad = np.radians(theta)
-j3_move = inv2.item(2)/ sec3
-for i in range(0, sec3, 1):
     j3.append(rad)
     theta = theta + j3_move
     rad = np.radians(theta)
@@ -152,10 +155,10 @@ for i in range(0, 300, 1):
 
 suction = []
 status = 0
-for i in range(0,55, 1):
+for i in range(0,45, 1):
     suction.append(status)
 status = 1
-for i in range(0,545, 1):
+for i in range(0,565, 1):
     suction.append(status)
 
 # status = 0
