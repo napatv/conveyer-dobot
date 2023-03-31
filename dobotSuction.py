@@ -36,7 +36,7 @@ def waitForMovementExecuted(id_):
 # Start editing the profile -----------------------------------
 times = []
 t = 0.0
-for i in range(0, 600, 1):
+for i in range(0, 200, 1):
 	times.append(t)
 	t = t + 0.050
 
@@ -51,14 +51,14 @@ inv1 = suf.invkinec(crd.item(0), crd.item(1), crd.item(2))
 crd = suf.globaltoFrame(0, -1.25, 0.035)
 inv2 = suf.invkinec(crd.item(0), crd.item(1), crd.item(2))
 
-crd = suf.globaltoFrame(0, -1.25, 0.035)
-inv2 = suf.invkinec(crd.item(0), crd.item(1), crd.item(2))
+crd = suf.globaltoFrame(0, -1.25, 0.2)
+inv3 = suf.invkinec(crd.item(0), crd.item(1), crd.item(2))
 
 
 sec = 60
 sec1 = 40
-sec2 = 500
-# sec3 = 
+sec2 = 40
+sec3 = 60
 
 
 
@@ -87,6 +87,14 @@ for i in range(0, sec2, 1):
     theta = theta + j1_move
     rad = np.radians(theta )
 
+theta = 0
+rad = np.radians(theta)
+j1_move = inv3.item(0)/ sec3
+for i in range(0, sec3, 1):
+    j1.append(rad)
+    theta = theta + j1_move
+    rad = np.radians(theta )
+rad = 0.0
 
 
 j2 = []
@@ -108,6 +116,11 @@ theta = 0
 rad = np.radians(theta)
 j2_move = inv2.item(1)/ sec2
 for i in range(0, sec2, 1):
+    j2.append(rad)
+    theta = theta + j2_move
+    rad = np.radians(theta)
+j2_move = inv3.item(1)/ sec3
+for i in range(0, sec3, 1):
     j2.append(rad)
     theta = theta + j2_move
     rad = np.radians(theta)
@@ -140,15 +153,20 @@ for i in range(0, sec2, 1):
     rad = np.radians(theta)
 rad = 0.0
 
+theta = 0
+rad = np.radians(theta)
+j3_move = inv3.item(2)/ sec3
+for i in range(0, sec3, 1):
+    j3.append(rad)
+    theta = theta + j3_move
+    rad = np.radians(theta)
+rad = 0.0
+
+
 
 j4 = []
 theta = 0.0
-for i in range(0, 300, 1):
-    j4.append(theta)
-    theta = theta + 0.00
-
-theta = 0.0  
-for i in range(0, 300, 1):
+for i in range(0, 200, 1):
     j4.append(theta)
     theta = theta + 0.00
 
@@ -158,9 +176,11 @@ status = 0
 for i in range(0,45, 1):
     suction.append(status)
 status = 1
-for i in range(0,565, 1):
+for i in range(0,93, 1):
     suction.append(status)
-
+status = 0
+for i in range(0,62, 1):
+    suction.append(status)
 # status = 0
 # for i in range(0,300, 1):
 # 	suction.append(status)
@@ -231,6 +251,6 @@ plt.title('cubiod pos')
 #ax.set_ylabel('Y')
 #ax.set_zlabel('Z')
 
-# plt.show()
+plt.show()
 
 
